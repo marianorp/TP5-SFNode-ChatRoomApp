@@ -10,13 +10,13 @@ const router = express.Router()
 router
     .get("/", (req,res)=> res.send("Haga un POST para enviar un mail"))
     .post('/', (req,res) => {
-      console.log(req.body)
+      console.log(req.body.text)
       var message = {
        // from: `"${req.body.name}" `, // sender address
+        from: '"Avalith TP5 👻" <foo@example.com>', // sender address
         to: `${req.body.to}`, // list of receivers
         subject: `${req.body.subject}`, // Subject line
-        text: `${req.body.text}`, // plain text body
-        html: `${req.body.html}`,
+       html: `<b>${req.body.text}</b>`, // html body
       };
       main(message);
       res.status(202).json({message : "Enviado correctamente"})
@@ -50,8 +50,19 @@ async function main(msg) {
   // send mail with defined transport object
   
   
-
-
+  //Agregar este cuando tengamos las rutas
+  //const sentMail = await sendMail({ from, to, subject, text, date})
+  
+  var date = new Date();
+  /*
+  var historialNueva = {
+    "from" : msg.from ,
+    "to" : msg.to ,
+    "subject" : msg.subject ,
+    "text" : msg.text ,
+    "date" : new Date 
+  }
+  */
   let mail = await transporter.sendMail(msg);
   //
   //HISTORIAL 
