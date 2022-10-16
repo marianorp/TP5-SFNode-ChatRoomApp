@@ -17,6 +17,21 @@ const socketio = require('socket.io')
 const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
+const bodyParser = require('body-parser')
+
+const router = express.Router()
+
+
+
+
+const email = require("./email")
+app.use(bodyParser.json({ type: "application/json" }))
+
+app.use("/email" , email)
+
+server.listen(process.env.PORT || 3000, () =>
+  console.log('Server Running on port 3000')
+)
 
 
 
@@ -109,12 +124,10 @@ io.on('connection', (socket) => {
   // use io.emit to notify all users together
 })
 
-// Server
-server.listen(process.env.PORT || 3000, () =>
-  console.log('Server Running on port 3000')
-)
+
 
 
 // app.listen(PORT, () => {
 // 	console.log(`Server on port ${PORT}`)
 // })
+
