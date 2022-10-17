@@ -1,26 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-:root {
-  --dark-color-a: #1232ff;
-  --dark-color-b: #5f9ff8;
-  --light-color: #5f9ff8;
-  --success-color: #5cb85c;
-  --error-color: #d9534f;
-}
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&display=swap');
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Dosis', sans-serif;
 }
 
 html {
   height: 100%;
 }
 body {
-  font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  background: var(--light-color);
+  background: #6A95A0;
 }
 
 ul {
@@ -31,44 +23,24 @@ a {
   text-decoration: none;
 }
 
-h1 {
-  letter-spacing: .1em;
-  text-shadow: 
-    0 -1px 0 #fff, 
-    0 1px 0 #2e2e2e, 
-    0 2px 0 #2c2c2c, 
-    0 3px 0 #2a2a2a, 
-    0 4px 0 #282828, 
-    0 5px 0 #262626, 
-    0 6px 0 #242424, 
-    0 7px 0 #222, 
-    0 8px 0 #202020, 
-    0 9px 0 #1e1e1e, 
-    0 10px 0 #1c1c1c, 
-    0 11px 0 #1a1a1a, 
-    0 12px 0 #181818, 
-    0 13px 0 #161616, 
-    0 14px 0 #141414, 
-    0 15px 0 #121212, 
-    0 22px 30px rgba(0, 0, 0, 0.9);
-}
-
 .btn {
   cursor: pointer;
   padding: 5px 15px;
-  background: #5461FF;
+  background: #6A95A0;
   color: white;
   border: 0;
   font-size: 17px;
   border-radius: 15px;
   margin-left: 13px;
+  transition: 0.5s;
 }
 
 .btn:hover {
-  background-color: rgb(5, 22, 169);
+  background-color: #83A3A0;
+  transform:  scale(1.1); 
 }
 
-/* Chat Page */
+/* PAGINA DE CHAT */
 
 .chat-container {
   background: #fff;
@@ -84,13 +56,15 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #333;
+  background-color: #4D5C60;
 }
 
 .chat-main {
   display: grid;
   grid-template-columns: 1fr 3fr;
   height: 78vh;
+  background-color: #83A3A0;
+  
 }
 
 .chat-sidebar {
@@ -120,6 +94,7 @@ h1 {
   padding: 30px;
   max-height: 500px;
   overflow-y: scroll;
+
 }
 
 .chat-messages .message {
@@ -127,6 +102,7 @@ h1 {
   margin-bottom: 15px;
   background-color: var(--light-color);
   border-radius: 5px;
+  background-color: #8A9EA0;
 }
 
 .chat-messages .message .meta {
@@ -146,7 +122,7 @@ h1 {
 
 .chat-form-container {
   padding: 15px 30px;
-  background-color: #5ba0ff;
+  background-color: #8A9EA0;
 }
 
 .chat-form-container form {
@@ -161,7 +137,10 @@ h1 {
 
 }
 
-/* Join Page */
+
+
+
+/* PAGINA HOME */
 .join-container {
   max-width: 500px;
   margin: 80px auto;
@@ -174,12 +153,12 @@ h1 {
   background: var(--dark-color-a);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background-color: #333;
+  background-color: #4D5C60;
 }
 
 .join-main {
   padding: 30px 40px;
-  background: var(--dark-color-b);
+  background: #8A9EA0;
   border: 1px solid;
 }
 
