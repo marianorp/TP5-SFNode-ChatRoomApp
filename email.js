@@ -12,7 +12,6 @@ router
     .post('/', (req,res) => {
       console.log(req.body.text)
       var message = {
-       // from: `"${req.body.name}" `, // sender address
         from: '"Avalith TP5 👻" <foo@example.com>', // sender address
         to: `${req.body.to}`, // list of receivers
         subject: `${req.body.subject}`, // Subject line
@@ -27,17 +26,16 @@ router
 
 
 
-// async..await is not allowed in global scope, must use a wrapper
+
 async function main(msg) {
-  // Generate test SMTP service account from ethereal.email
-  // Only needed if you don't have a real mail account for testing
+
   let testAccount = await nodemailer.createTestAccount();
 
-  // create reusable transporter object using the default SMTP transport
+
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
-    secure: true, // true for 465, false for other ports
+    secure: true, 
     auth: {
       user: "", // INGRESAR MAIL DE GOOGLE !!!!!
       pass: "", // INGRESAR CONTRASEÑA GENERADA POR GOOGLE !!!!!!
@@ -47,22 +45,9 @@ async function main(msg) {
 
 
 
-  // send mail with defined transport object
-  
-  
-  //Agregar este cuando tengamos las rutas
-  //const sentMail = await sendMail({ from, to, subject, text, date})
-  
+
   var date = new Date();
-  /*
-  var historialNueva = {
-    "from" : msg.from ,
-    "to" : msg.to ,
-    "subject" : msg.subject ,
-    "text" : msg.text ,
-    "date" : new Date 
-  }
-  */
+
   let mail = await transporter.sendMail(msg);
   //
   //HISTORIAL 
@@ -78,11 +63,11 @@ async function main(msg) {
   }
 
   console.log("Message sent: %s", mail.messageId);
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
-  // Preview only available when sending through an Ethereal account
+
+
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(mail));
-  // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+
 }
 
 
